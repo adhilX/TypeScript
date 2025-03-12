@@ -1,29 +1,30 @@
-
-// Define interfaces
-interface MyInterface {
-    property: string;
-    method(): void;
+// Define a TypeScript interface
+interface Person {
+    firstName: string;
+    lastName: string;
+    age: number;
 }
 
-// Define classes
-class MyClass implements MyInterface {
-    property: string;
-
-    constructor(property: string) {
-        this.property = property;
-    }
-
-    method(): void {
-        console.log(this.property);
-    }
+// Create a function that takes a Person object and returns a greeting
+function greet(person: Person): string {
+    return `Hello, ${person.firstName} ${person.lastName}! You are ${person.age} years old.`;
 }
 
-// Define functions
-function myFunction(param: string): void {
-    console.log(param);
-}
+// Create a Person object
+const user: Person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 25
+};
 
-// Main execution
-const myInstance = new MyClass('Hello, TypeScript!');
-myInstance.method();
-myFunction('This is a function call.');
+// Call the greet function
+console.log(greet(user));
+
+// Define a type for a function that takes a Person object and returns a string
+type GreetFunction = (person: Person) => string;
+
+// Assign the greet function to a variable of type GreetFunction
+const greetFunction: GreetFunction = greet;
+
+// Call the greet function using the variable
+console.log(greetFunction(user));
