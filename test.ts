@@ -48,48 +48,48 @@
 
 
 
-// // infer types (implicit typing) in TypeScript
-// //--------------------------------------------
+// infer types (implicit typing) in TypeScript
+//--------------------------------------------
 
-// // TypeScript figures out the type of a variable from the value assigned to it.
-
-
-// let userName = 'Adhil'
-// let age = 18 
-//   age = '18' // Error: Type 'string' is not assignable to type 'number'.
-
-// // In the above example, we defined a variable named age and assigned the value 18 to it.
-
-// // TypeScript inferred the type of the age variable as number based on the initial value of 18. 
-// // When we try to assign a string value to the age variable, TypeScript throws an error because the type of the age variable is number
+// TypeScript figures out the type of a variable from the value assigned to it.
 
 
+let userName = 'Adhil'
+let age = 18 
+  age = '18' // Error: Type 'string' is not assignable to type 'number'.
 
-// // Defing types (explicit typing) in TypeScript
-// //--------------------------------------------
+// In the above example, we defined a variable named age and assigned the value 18 to it.
 
-// // You can explicitly define the type of a variable using a colon (:) followed by the type.
-// // This is known as explicit typing.
+// TypeScript inferred the type of the age variable as number based on the initial value of 18. 
+// When we try to assign a string value to the age variable, TypeScript throws an error because the type of the age variable is number
 
-// let userName:string  = 'Adhil' // we deleted the type of the variable as string
-// let age:number = 18
-// let isStudent:boolean = true
-// let hobbies:string[] = ['Reading', 'Coding', 'Traveling']  // Array of strings
 
-// let count:[] = [1, 2, 3, 4, 5]   // Error: it is empty array so it is not able to insert number values ,the array is always empty
-// let count :number[] = [1, 2, 3, 4, 5] // Correct
 
-// let userDetails :{name : string, age : number, isStudent : boolean} = { 
+// Defing types (explicit typing) in TypeScript
+//--------------------------------------------
 
-// // Here we are defining the type of the object , in this type of defining we must use all the properties of the object , else it will throw an error
+// You can explicitly define the type of a variable using a colon (:) followed by the type.
+// This is known as explicit typing.
 
-//   name : 'Adhil', // Here we could not assing any other type of value to the name property , only string is allowed
-//   age : 18,
-//     isStudent : true ,
-// Salary : 10000 // Error: we dont have the property named "Salary" in the type of the object , so it will throw an error
-// }
+let userName:string  = 'Adhil' // we deleted the type of the variable as string
+let age:number = 18
+let isStudent:boolean = true
+let hobbies:string[] = ['Reading', 'Coding', 'Traveling']  // Array of strings
 
-// userDetails.age = '18' // Error: here we are trying to assign a string value to the age property , but the type of the age property is number
+let count:[] = [1, 2, 3, 4, 5]   // Error: it is empty array so it is not able to insert number values ,the array is always empty
+let count :number[] = [1, 2, 3, 4, 5] // Correct
+
+let userDetails :{name : string, age : number, isStudent : boolean} = { 
+
+// Here we are defining the type of the object , in this type of defining we must use all the properties of the object , else it will throw an error
+
+  name : 'Adhil', // Here we could not assing any other type of value to the name property , only string is allowed
+  age : 18,
+    isStudent : true ,
+Salary : 10000 // Error: we dont have the property named "Salary" in the type of the object , so it will throw an error
+}
+
+userDetails.age = '18' // Error: here we are trying to assign a string value to the age property , but the type of the age property is number
 
 
  // Basic types in TypeScript
@@ -133,94 +133,94 @@
 
 
 
-//  // Define a TypeScript interface
-//  //--------------------------------------------
+ // Define a TypeScript interface
+ //--------------------------------------------
 
-// // An interface is a TypeScript feature that defines the shape of an object.
-// // syntax given below
+// An interface is a TypeScript feature that defines the shape of an object.
+// syntax given below
 
-// interface Details {
-//    name : string,
-//     age : number,
-//     isStudent : boolean
-// }
+interface Details {
+   name : string,
+    age : number,
+    isStudent : boolean
+}
 
-// let userDetails :Details = {
-//     name : 'Adhil',
-//    // if if dont add age property it will throw an error,because we are defining the type of the object
-//     age : 18,
-//     isStudent : true
-// }
-
-
-
-
-// // Defining a type
-// //--------------------------------------------
-
-// // TypeScript also allows you to define custom types using the type keyword.
-// // The syntax for defining a type is similar to that of defining an interface, but with a few differences.
-// // Here's an example:
-// type Details = {
-//     name : string,
-//     age : number,
-//     isStudent : boolean
-//     getName?:() => string // optional property
-//     // getName is an optional property that is a function returning a string.
-// }
-// let skills :( string| number) [] = ['Reading', 'Coding', 'Traveling',3 ,3, 5] // Array of strings and numbers using union operator "|"
-
-// // union operator "|" is used to define the multiple types of the array
-
-
-// function getUserName({name , age}:{name :string ; age:number}) :string{
-//  return name
-// }
-
-// getUserName({name : 'Adhil' ,age: 23}) // here we are passing the object with the properties name and age , so we are defining the type of the object in the function itself
+let userDetails :Details = {
+    name : 'Adhil',
+   // if if dont add age property it will throw an error,because we are defining the type of the object
+    age : 18,
+    isStudent : true
+}
 
 
 
-// // Void type
-// //--------------------------------------------
 
-// // The void type is used to indicate that a function does not return a value.
-// // Here's an example:
-// function greet(name: string): void {
-//     console.log(`Hello, ${name}!`);
-// }
-// //here the function greet does not return any value , so we are using void type
+// Defining a type
+//--------------------------------------------
 
+// TypeScript also allows you to define custom types using the type keyword.
+// The syntax for defining a type is similar to that of defining an interface, but with a few differences.
+// Here's an example:
+type Details = {
+    name : string,
+    age : number,
+    isStudent : boolean
+    getName?:() => string // optional property
+    // getName is an optional property that is a function returning a string.
+}
+let skills :( string| number) [] = ['Reading', 'Coding', 'Traveling',3 ,3, 5] // Array of strings and numbers using union operator "|"
 
-
-// // Any type
-// //--------------------------------------------
-// // The any type is used to indicate that a variable can have any type of value.
-// //this is not recommended to use , because it will not show any errors , so it is difficult to debug the code
-
-// //example given below:
-// let value: any = 10;
-// value = 'Hello';
+// union operator "|" is used to define the multiple types of the array
 
 
-// //null and undefined types
-// //--------------------------------------------
-// // The null and undefined types are used to indicate that a variable can have the value null or undefined.
-// //example given below:
-// let num: number | null = null;
-// let str: string | undefined = undefined;
+function getUserName({name , age}:{name :string ; age:number}) :string{
+ return name
+}
+
+getUserName({name : 'Adhil' ,age: 23}) // here we are passing the object with the properties name and age , so we are defining the type of the object in the function itself
 
 
 
-// // Named types
-// //--------------------------------------------
-// // You can define a type using the type keyword and give it a name.
+// Void type
+//--------------------------------------------
 
-// //example given below:
-// type  statusType = 'Pending' | 'Completed' | 'Failed'
+// The void type is used to indicate that a function does not return a value.
+// Here's an example:
+function greet(name: string): void {
+    console.log(`Hello, ${name}!`);
+}
+//here the function greet does not return any value , so we are using void type
 
-// let CurrentStatus : statusType = 'success' // Error : "success" is not in the statusType , it show an errr
 
-// let NowStatus : statusType = 'Completed' // correct .. and The Typescript automaticaly suggest the type like "Pending" . "Completed" . "Failed"
 
-// // so it realy helpsfull to understand which types can assign to the variable 
+// Any type
+//--------------------------------------------
+// The any type is used to indicate that a variable can have any type of value.
+//this is not recommended to use , because it will not show any errors , so it is difficult to debug the code
+
+//example given below:
+let value: any = 10;
+value = 'Hello';
+
+
+//null and undefined types
+//--------------------------------------------
+// The null and undefined types are used to indicate that a variable can have the value null or undefined.
+//example given below:
+let num: number | null = null;
+let str: string | undefined = undefined;
+
+
+
+// Named types
+//--------------------------------------------
+// You can define a type using the type keyword and give it a name.
+
+//example given below:
+type  statusType = 'Pending' | 'Completed' | 'Failed'
+
+let CurrentStatus : statusType = 'success' // Error : "success" is not in the statusType , it show an errr
+
+let NowStatus : statusType = 'Completed' // correct .. and The Typescript automaticaly suggest the type like "Pending" . "Completed" . "Failed"
+
+// so it realy helpsfull to understand which types can assign to the variable 
