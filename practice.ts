@@ -255,16 +255,17 @@
 //       console.log("Rejected:", error);
 //     });
   
-enum staues {pending=1 , complete , reject}
+// enum staues {pending=1 , complete , reject}
 
-type tuple= [string , Number?]
+// type tuple= [string , Number?]
 
-const aa:tuple =['aa']
-
-
-let arr:[string,number] = ['tryy',333]
+// const aa:tuple =['aa']
 
 
-let str =''
+// let arr:[string,number] = ['tryy',333]
+
+
+// let str =''
+
 
 
